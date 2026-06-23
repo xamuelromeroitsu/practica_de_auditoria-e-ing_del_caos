@@ -41,7 +41,7 @@ El código fuente contiene comentarios explícitos anotados como `// ❌ FRAGILE
 
 Para revisar el análisis técnico profundo de cada una de estas vulnerabilidades y evaluar sus impactos directos en la seguridad de la UI, dirígete al:
 
-➡️ **[📋 Diagnóstico Definitivo del Código Fuente (AUDITORIA.md)](/AUDITORIA.md)**
+➡️ **[📋 Diagnóstico Definitivo del Código Fuente (AUDITORIA.md)](./AUDITORIA.md)**
 
 ---
 
