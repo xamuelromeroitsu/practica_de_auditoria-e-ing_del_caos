@@ -69,10 +69,10 @@ Sigue este orden metodológico para evaluar y corregir el componente. Puedes mar
 - [x] **Paso 1.5:** Intentar enviar el formulario de ofertas con un formato de correo inválido (ej: `nombre-sin-arroba`) y con el campo vacío para comprobar la validación nativa.
 
 ### 💻 Fase 2: Inspección del Código Fuente
-- [ ] **Paso 2.1:** Localizar el archivo del componente principal en el editor (ej: `src/App.jsx` o similar).
-- [ ] **Paso 2.2:** Buscar todas las instancias de `fetch` o `axios` y confirmar si contienen un bloque `.catch()` o una estructura `try/catch` para interceptar caídas del servidor.
-- [ ] **Paso 2.3:** Rastrear el uso de `localStorage.getItem` y verificar si la conversión con `JSON.parse()` está blindada contra datos corruptos.
-- [ ] **Paso 2.4:** Inspeccionar si los botones de acción (`<button>`) cuentan con la propiedad `disabled` vinculada al estado de validación del formulario.
+- [x] **Paso 2.1:** Localizar el archivo del componente principal en el editor (ej: `src/App.jsx` o similar).
+- [x] **Paso 2.2:** Buscar todas las instancias de `fetch` o `axios` y confirmar si contienen un bloque `.catch()` o una estructura `try/catch` para interceptar caídas del servidor.
+- [x] **Paso 2.3:** Rastrear el uso de `localStorage.getItem` y verificar si la conversión con `JSON.parse()` está blindada contra datos corruptos.
+- [x] **Paso 2.4:** Inspeccionar si los botones de acción (`<button>`) cuentan con la propiedad `disabled` vinculada al estado de validación del formulario.
 
 ### 🛠️ Fase 3: Mitigación y Cierre
 - [ ] **Paso 3.1:** Crear una rama limpia en Git para implementar las soluciones (`git checkout -b fix/robustez-samuel`).
