@@ -1,0 +1,52 @@
+name: Deploy Vite App to GitHub Pages
+
+on:
+  push:
+    branches: ["principal"] # Ajustado al nombre real de tu rama
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        # Esto le dice a GitHub que entre a tu subcarpeta antes de ejecutar comandos
+        working-directory: ./productos-aplicación-frágil
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: './productos-aplicación-frágil/package-lock.json'
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Compilar proyecto (Build)
+        run: npm run build
+
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+
+      - name: Subir carpeta compilada
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Solo subimos el resultado final de Vite, no todo el proyecto
+          path: './productos-aplicación-frágil/dist'
+
+      - name: Desplegar en GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
