@@ -1,0 +1,195 @@
+/* products-app-robust · styles */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #0f1117;
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: #1a1d2e;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #2d3147;
+}
+
+.app-header h1 { font-size: 1.15rem; font-weight: 700; }
+
+.app-header input {
+  flex: 1;
+  background: #0f1117;
+  border: 1px solid #2d3147;
+  border-radius: 6px;
+  padding: 0.45rem 0.75rem;
+  color: #e2e8f0;
+  font-size: 0.85rem;
+  outline: none;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.product-card {
+  background: #1a1d2e;
+  border: 1px solid #2d3147;
+  border-radius: 10px;
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.product-card img {
+  width: 100%;
+  height: 130px;
+  object-fit: contain;
+  background: #0f1117;
+  border-radius: 6px;
+}
+
+.product-card h3 { font-size: 0.85rem; font-weight: 600; color: #e2e8f0; }
+.price { font-size: 0.9rem; font-weight: 700; color: #a78bfa; }
+
+.btn-fav {
+  background: transparent;
+  border: 1px solid #2d3147;
+  border-radius: 6px;
+  padding: 0.35rem 0.65rem;
+  color: #94a3b8;
+  font-size: 0.78rem;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+.btn-fav.active { border-color: #f59e0b; color: #f59e0b; }
+
+/* Loading state */
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2.5rem;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.loading-spinner {
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid #2d3147;
+  border-top-color: #a78bfa;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Error state */
+.error-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2rem;
+  background: rgba(239, 68, 68, 0.06);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.error-icon { font-size: 1.5rem; }
+.error-message p { color: #e2e8f0; font-size: 0.9rem; }
+
+.retry-btn {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+  border-radius: 6px;
+  padding: 0.4rem 1rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+  margin-top: 0.25rem;
+}
+
+/* Empty state */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2.5rem;
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.empty-state-icon { font-size: 2rem; }
+
+/* Subscribe section */
+.subscribe-section {
+  background: #1a1d2e;
+  border: 1px solid #2d3147;
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.subscribe-section h2 { font-size: 1rem; margin-bottom: 0.75rem; }
+
+.subscribe-form { display: flex; gap: 0.5rem; flex-wrap: wrap; flex-direction: column; max-width: 400px; }
+
+.subscribe-form input {
+  background: #0f1117;
+  border: 1px solid #2d3147;
+  border-radius: 6px;
+  padding: 0.45rem 0.75rem;
+  color: #e2e8f0;
+  font-size: 0.85rem;
+  outline: none;
+}
+
+.subscribe-form input.input-error { border-color: #ef4444; }
+
+.form-error { font-size: 0.78rem; color: #fca5a5; }
+
+.subscribe-form button {
+  background: #a78bfa;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.subscribe-form button:disabled {
+  background: #2d3147;
+  color: #64748b;
+  cursor: not-allowed;
+}
+
+.subscribe-success {
+  color: #4ade80;
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+}
