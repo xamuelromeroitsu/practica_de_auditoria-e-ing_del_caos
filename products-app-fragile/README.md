@@ -6,22 +6,45 @@ Tu tarea es romperlo, detectar fallas y proponer mejoras.
 No está diseñado como ejemplo perfecto.
 Está diseñado para **auditar**.
 
-## Cómo ejecutarlo
+## 🚀 Cómo Ejecutarlo
 
 ```bash
+# 1. Instalar dependencias del proyecto
 npm install
-npm run dev
+
+# 2. Levantar el entorno local en Vite
+npm run dev!
+
 ```
 
-## Qué observar
 
-- ¿Qué pasa si no hay productos que coincidan con la búsqueda?
-- ¿Qué pasa mientras carga? (primeros 800ms)
-- ¿Qué pasa con los productos que tienen imagen vacía o null?
-- ¿Qué pasa si escribes mal el email y haces submit?
-- ¿Qué pasa si LocalStorage tiene datos corruptos?
-- ¿Qué responsabilidades tiene App.jsx?
+## 🔍 Qué Observar (Vectores de Falla)
 
-## Fallas intencionales marcadas en el código
+Al interactuar con la aplicación en tu navegador, analiza críticamente los siguientes escenarios:
 
-El código tiene comentarios `// ❌ FRAGILE:` que señalan exactamente dónde están los problemas. Encuéntralos, entiende por qué son un problema, y propón mejoras.
+* **Búsquedas vacías:** ¿Qué pasa si no hay productos que coincidan con los criterios de la búsqueda?
+* **Ciclo de vida asíncrono:** ¿Qué pasa en la interfaz mientras los datos cargan? (especialmente durante los primeros 800ms).
+* **Inconsistencia multimedia:** ¿Qué pasa con los productos que tienen una imagen vacía o un valor `null`?
+* **Validación perimetral:** ¿Qué pasa si escribes mal el email (o lo dejas vacío) y haces clic en *Submit*?
+* **Persistencia vulnerable:** ¿Qué pasa si alteras el `LocalStorage` inyectando datos corruptos o texto plano?
+* **Arquitectura:** ¿Qué responsabilidades tiene el archivo `App.jsx`? ¿Cumple con el principio de responsabilidad única?
+
+---
+
+## ⚠️ Fallas Intencionales Marcadas en el Código
+
+El código fuente contiene comentarios explícitos anotados como `// ❌ FRAGILE:` que señalan exactamente los puntos críticos del sistema. Tu objetivo es encontrarlos, deducir por qué representan un riesgo técnico en entornos de producción y proponer soluciones defensivas.
+
+---
+
+## 📊 Siguiente Paso: Reporte de Hallazgos
+
+Para revisar el análisis técnico profundo de cada una de estas vulnerabilidades y evaluar sus impactos directos en la seguridad de la UI, dirígete al:
+
+➡️ **[📋 Diagnóstico Definitivo del Código Fuente (AUDITORIA.md)](/AUDITORIA.md)**
+
+---
+
+## ↩️ Volver al Índice General de la Raíz
+
+* **[Regresar al panel principal](../README.md)**
