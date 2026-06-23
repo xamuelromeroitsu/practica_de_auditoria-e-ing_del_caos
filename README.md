@@ -62,7 +62,7 @@ Si vas a empezar a refactorizar, concentra tus esfuerzos en resolver estos tres 
 Sigue este orden metodológico para evaluar y corregir el componente. Puedes marcar cada tarea cambiando el espacio `[ ]` por una `[x]` directamente en este archivo:
 
 ### 🔍 Fase 1: Diagnóstico en la Interfaz (UI)
-- [ ] **Paso 1.1:** Abrir las Herramientas de Desarrollador (F12) en el navegador y posicionarse en la pestaña *Network*.
+- [x] **Paso 1.1:** Abrir las Herramientas de Desarrollador (F12) en el navegador y posicionarse en la pestaña *Network*.
 - [ ] **Paso 1.2:** Activar el perfil **Slow 3G** y recargar la página para evaluar si existe una interfaz visual de carga (Estado `loading`).
 - [ ] **Paso 1.3:** Forzar una búsqueda con caracteres inexistentes (ej: `asdfghjk123`) para verificar si la UI maneja el estado vacío (Estado `empty`).
 - [ ] **Paso 1.4:** Evaluar visualmente si las imágenes rotas muestran un diseño alternativo o si se ven rotas en la UI (Estado `fallback`).
